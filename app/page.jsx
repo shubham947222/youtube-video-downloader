@@ -1,8 +1,10 @@
 "use client";
 import axios from "axios";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function Home() {
+  const scrollTargetRef = useRef(null);
+
   const [videoLink, setVideoLink] = useState("");
   const [finalLink, setFinalLink] = useState("");
   const [showDownload, setShowDownload] = useState(false);
@@ -16,11 +18,16 @@ export default function Home() {
         setFinalLink(res?.data?.format?.url);
         setShowDownload(true);
         setVideoLink("");
+        handleScroll();
       })
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
   };
-  console.log(loading, "loading");
+  const handleScroll = () => {
+    if (scrollTargetRef.current) {
+      scrollTargetRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <main className="mx-auto md:max-w-6xl px-4">
       <header className="flex justify-between py-4">
@@ -54,7 +61,6 @@ export default function Home() {
             />
             <button
               onClick={handleDownload}
-              // className="rounded-md py-1 px-4 font-semibold border"
               className="rounded-md py-1 px-4 font-semibold border transition duration-300 hover:bg-white hover:text-indigo-500"
             >
               Convert
@@ -63,7 +69,7 @@ export default function Home() {
         )}
       </div>
       {showDownload && (
-        <div className="bg-black">
+        <div className="bg-black" id="scrollTarget" ref={scrollTargetRef}>
           <video src={finalLink} width="100%" controls />
         </div>
       )}
