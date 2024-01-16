@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Youtube video Downloader",
-  description: "Convert and Download youtube Video on one click",
+  description: "View and Download youtube Video on one click",
 };
 
 export default function RootLayout({ children }) {
