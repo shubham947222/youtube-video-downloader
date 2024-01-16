@@ -63,16 +63,20 @@ export default function Home() {
               onClick={handleDownload}
               className="rounded-md py-1 px-4 font-semibold border transition duration-300 hover:bg-white hover:text-indigo-500"
             >
-              Convert
+              view
             </button>
           </div>
         )}
+        {showDownload && (
+          <div
+            className="bg-black md:max-w-xl"
+            id="scrollTarget"
+            ref={scrollTargetRef}
+          >
+            <video src={finalLink} width="100%" controls />
+          </div>
+        )}
       </div>
-      {showDownload && (
-        <div className="bg-black" id="scrollTarget" ref={scrollTargetRef}>
-          <video src={finalLink} width="100%" controls />
-        </div>
-      )}
     </main>
   );
 }
