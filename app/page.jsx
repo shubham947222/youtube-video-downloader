@@ -53,7 +53,10 @@ export default function Home() {
         </div>
       </header>
       {error && (
-        <div class="bg-indigo-900 text-center py-4 lg:px-4">
+        <div
+          class="bg-indigo-900 text-center py-4 lg:px-4"
+          style={{ marginBottom: "-9px", borderRadius: "5px" }}
+        >
           <div
             class="p-2 bg-indigo-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex"
             role="alert"
