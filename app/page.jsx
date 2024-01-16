@@ -74,7 +74,7 @@ export default function Home() {
           </div>
         </div>
       )}
-      <div className="flex text-white bg-indigo-400 rounded-md flex-col items-center min-h-[450px] w-full justify-center">
+      <div className="flex text-white bg-indigo-300 rounded-md flex-col items-center min-h-[450px] w-full justify-center">
         <h3>
           {loading ? "Thank you for waiting" : "Shubh Youtube Video Downloader"}
         </h3>
@@ -91,7 +91,7 @@ export default function Home() {
             />
             <button
               onClick={handleDownload}
-              className="rounded-md py-1 px-4 font-semibold border transition duration-300 hover:bg-white hover:text-indigo-400"
+              className="rounded-md py-1 px-4 font-semibold border transition duration-300 hover:bg-white hover:text-indigo-300"
             >
               view
             </button>
