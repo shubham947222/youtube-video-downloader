@@ -46,7 +46,7 @@ export default function Home() {
 
       <div className="flex text-white bg-indigo-300 rounded-md flex-col items-center min-h-[450px] w-full justify-center">
         <h3>
-          {loading ? "Thank you for waiting" : "Youtube Video Downloader"}
+          {loading ? "Thank you for waiting" : "Shubh Youtube Video Downloader"}
         </h3>
         {loading ? (
           <div className="loader mt-3"></div>
